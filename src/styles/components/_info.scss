@@ -1,0 +1,35 @@
+.info {
+  padding-block: 30px;
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    &__box {
+      width: 300px;
+      text-align: center;
+      -webkit-box-shadow: 0px 0px 10px 0px rgba(225, 139, 31, 1);
+      -moz-box-shadow: 0px 0px 10px 0px rgba(225, 139, 31, 1);
+      box-shadow: 0px 0px 10px 0px rgba(225, 139, 31, 1);
+      padding: 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      &:hover {
+        transform: translateY(-10px);
+      }
+      &__title {
+        > h3 {
+          color: #e18b1f;
+          padding-block: 15px;
+        }
+      }
+      &__text {
+        > p {
+          color: #e18b1f;
+          font-weight: 200;
+        }
+      }
+    }
+  }
+}
