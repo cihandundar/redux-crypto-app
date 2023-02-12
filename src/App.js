@@ -1,5 +1,6 @@
 import { Navbar } from "components";
-import { Home } from "pages";
+import { CoinDetails, Home } from "pages";
+import CoinList from "pages/CoinList";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -8,6 +9,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/coin" element={<CoinList />} />
+        <Route path="/coins/:id" element={<CoinDetails />} />
       </Routes>
     </BrowserRouter>
   );
