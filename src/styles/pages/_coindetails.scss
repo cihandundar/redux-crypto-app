@@ -9,6 +9,9 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      @include breakpoint(md) {
+        flex-direction: column;
+      }
       &__rank {
         -webkit-box-shadow: 0px 0px 10px 0px rgba(225, 139, 31, 1);
         -moz-box-shadow: 0px 0px 10px 0px rgba(225, 139, 31, 1);
@@ -25,6 +28,13 @@
       &__title {
         display: flex;
         align-items: center;
+        @include breakpoint(md) {
+          margin-block: 20px;
+        }
+        @include breakpoint(sm) {
+          flex-direction: column;
+          text-align: center;
+        }
         > h3 {
           margin-right: 10px;
           color: #fff;
@@ -47,6 +57,9 @@
       }
       &__list {
         display: flex;
+        @include breakpoint(sm) {
+          flex-direction: column;
+        }
       }
       &__link {
         display: flex;
@@ -63,6 +76,10 @@
         height: 55px;
         margin-inline: 10px;
         border-radius: 8px;
+        @include breakpoint(md) {
+          margin-inline: 0;
+          margin-block: 10px;
+        }
         &--down {
           color: red;
         }
