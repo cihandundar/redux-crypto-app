@@ -14,7 +14,15 @@ const CoinDetails = () => {
 
   console.log(data);
 
-  return <div>CoinDetails</div>;
+  return (
+    <div className="details">
+      <div className="details__container">
+        <div className="details__wrapper">
+          <div className="details__container__box"></div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default CoinDetails;
