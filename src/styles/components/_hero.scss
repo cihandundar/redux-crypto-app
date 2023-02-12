@@ -5,23 +5,47 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include breakpoint(lg) {
+      max-width: 900px;
+    }
+    @include breakpoint(md) {
+      flex-direction: column;
+    }
   }
   &__gif {
+    @include breakpoint(md) {
+      padding: 30px;
+    }
     > img {
       border-radius: 8px;
       -webkit-box-shadow: 0px 0px 10px 0px rgba(225, 139, 31, 1);
       -moz-box-shadow: 0px 0px 10px 0px rgba(225, 139, 31, 1);
       box-shadow: 0px 0px 10px 0px rgba(225, 139, 31, 1);
+      @include breakpoint(lg) {
+        width: 500px;
+      }
+      @include breakpoint(md) {
+        width: 100%;
+      }
     }
   }
   &__text {
     padding-left: 50px;
     text-align: right;
+    @include breakpoint(md) {
+      text-align: center;
+      padding-left: 0;
+      padding-inline: 30px;
+    }
+
     &__title {
       > h1 {
         font-weight: 200;
         color: #fff;
         font-size: 2.4rem;
+        @include breakpoint(lg) {
+          font-size: 1.8rem;
+        }
         > span {
           font-weight: 700;
         }
@@ -36,6 +60,12 @@
       margin-top: 20px;
       display: flex;
       justify-content: flex-end;
+      @include breakpoint(md) {
+        justify-content: center;
+      }
+      @include breakpoint(xs) {
+        flex-direction: column;
+      }
       &__col {
         > button {
           width: 200px;
@@ -57,4 +87,8 @@
 
 .left {
   margin-right: 20px;
+  @include breakpoint(md) {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
 }

@@ -5,6 +5,10 @@
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    @include breakpoint(md) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
     &__box {
       width: 300px;
       text-align: center;
@@ -15,6 +19,9 @@
       border-radius: 8px;
       cursor: pointer;
       transition: 0.3s ease;
+      @include breakpoint(md) {
+        margin: 20px;
+      }
       &:hover {
         transform: translateY(-10px);
       }
