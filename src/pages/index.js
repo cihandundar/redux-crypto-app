@@ -1,3 +1,4 @@
 import Home from "./Home";
-
-export { Home };
+import CoinList from "./CoinList";
+import CoinDetails from "./CoinDetails";
+export { Home, CoinList, CoinDetails };
