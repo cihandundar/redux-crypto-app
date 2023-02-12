@@ -35,17 +35,13 @@
   }
   &__list {
     display: flex;
-    @include breakpoint(xss) {
-      flex-direction: column;
-      text-align: center;
-    }
+    align-items: center;
     &__link {
       &:not(:last-child) {
         margin-right: 30px;
-        @include breakpoint(xss) {
-          margin-right: 0;
-          margin-block: 30px;
-        }
+      }
+      @include breakpoint(xss) {
+        margin-top: 30px;
       }
       > a {
         color: #e18b1f;
