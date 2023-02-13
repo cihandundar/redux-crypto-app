@@ -79,9 +79,7 @@ const CoinDetails = () => {
         <div className="detail__text">
           <p dangerouslySetInnerHTML={{ __html: data?.description?.en }}></p>
         </div>
-        <div className="detail__chart">
-          <HistoryChart />
-        </div>
+        <HistoryChart />
       </div>
     </div>
   );
