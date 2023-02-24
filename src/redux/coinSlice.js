@@ -11,6 +11,7 @@ export const fetchCoin = createAsyncThunk("coin/fetchCoin", async () => {
   const response = await axios.get(
     `https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc&per_page=100&page=1&sparkline=false`
   );
+  console.log(response, "tüm coinler calisti");
   return response.data;
 });
 
@@ -20,6 +21,7 @@ export const fetchCoinDetails = createAsyncThunk(
     const response = await axios.get(
       `https://api.coingecko.com/api/v3/coins/${id}`
     );
+    console.log(response, "detay calisti");
     return response.data;
   }
 );
@@ -27,7 +29,9 @@ export const fetchCoinDetails = createAsyncThunk(
 export const coinSlice = createSlice({
   name: `coin`,
   initialState,
-  reducers: {},
+  reducers: {
+    reset: () => initialState,
+  },
   extraReducers: (builder) => {
     builder.addCase(fetchCoin.pending, (state) => {
       state.isLoading = true;
@@ -53,5 +57,5 @@ export const coinSlice = createSlice({
     });
   },
 });
-
+export const { reset } = coinSlice.actions;
 export default coinSlice.reducer;

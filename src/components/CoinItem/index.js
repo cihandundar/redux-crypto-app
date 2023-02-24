@@ -7,13 +7,12 @@ import { fetchCoin } from "redux/coinSlice";
 
 const CoinItem = () => {
   const data = useSelector((state) => state?.coinReducer?.data);
-  const dispatch = useDispatch();
 
+  const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchCoin());
   }, [dispatch]);
 
-  console.log(data);
   const [login, setLogin] = useState(false);
 
   const toggleLogin = () => {

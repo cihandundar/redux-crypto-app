@@ -1,6 +1,5 @@
 import { Navbar } from "components";
-import { CoinDetails, Home } from "pages";
-import CoinList from "pages/CoinList";
+import { CoinDetails, Home, CoinList } from "pages";
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
