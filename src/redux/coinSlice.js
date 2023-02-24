@@ -13,6 +13,7 @@ export const fetchCoin = createAsyncThunk("coin/fetchCoin", async () => {
   );
   return response.data;
 });
+
 export const fetchCoinDetails = createAsyncThunk(
   "coin/fetchCoinDetails",
   async (id) => {

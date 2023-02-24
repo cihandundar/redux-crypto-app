@@ -8,9 +8,11 @@ import { fetchCoin } from "redux/coinSlice";
 const CoinItem = () => {
   const data = useSelector((state) => state?.coinReducer?.data);
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchCoin());
   }, [dispatch]);
+
   console.log(data);
   const [login, setLogin] = useState(false);
 
@@ -23,40 +25,27 @@ const CoinItem = () => {
   } else {
     document.body.classList.remove("active-login");
   }
-  const [search, setSearch] = useState(``);
+
   return (
     <div className="item">
-      <div className="item__input">
-        <input
-          type="text"
-          placeholder="Search"
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </div>
       <div className="item__container">
-        {data
-          ?.filter((item) => {
-            return search.toLowerCase() === ``
-              ? item
-              : item.name.toLowerCase().includes(search);
-          })
-          ?.map((item) => (
-            <div className="item__container__box" key={item?.id}>
-              <div className="item__container__box__img">
-                <img src={item?.image} alt="" />
-              </div>
-              <div className="item__container__box__title">
-                <h2>{item?.name}</h2>
-                <span>{item?.symbol}</span>
-              </div>
-              <Link to={`/coin/${item?.id}`}>
-                <button>View details</button>
-              </Link>
-              <span onClick={toggleLogin} className="favorites">
-                <StarIcon />
-              </span>
+        {data?.map((item) => (
+          <div className="item__container__box" key={item?.id}>
+            <div className="item__container__box__img">
+              <img src={item?.image} alt="" />
             </div>
-          ))}
+            <div className="item__container__box__title">
+              <h2>{item?.name}</h2>
+              <span>{item?.symbol}</span>
+            </div>
+            <Link to={`/coin/${item?.id}`}>
+              <button>View details</button>
+            </Link>
+            <span onClick={toggleLogin} className="favorites">
+              <StarIcon />
+            </span>
+          </div>
+        ))}
         {login && (
           <div className="popup">
             <div className="popup__container"></div>
