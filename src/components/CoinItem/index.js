@@ -45,6 +45,7 @@ const CoinItem = () => {
             </span>
           </div>
         ))}
+
         {login && (
           <div className="popup">
             <div className="popup__container"></div>
